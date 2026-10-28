@@ -1,0 +1,187 @@
+:root:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #8a94a6;
+  --line: #edf1f6;
+  --green: #22c55e;
+  --green-dark: #16a34a;
+  --green-soft: #e9f9ef;
+  --blue: #3b82f6;
+  --pink: #fb7185;
+  --amber: #fbbf24;
+  --radius: 22px;
+  --shadow: 0 18px 40px -28px rgba(15, 23, 42, 0.28);
+  --el-color-primary: #22c55e;
+  --el-color-primary-light-3: #4ade80;
+  --el-color-primary-light-5: #86efac;
+  --el-color-primary-light-7: #bbf7d0;
+  --el-color-primary-light-8: #dcfce7;
+  --el-color-primary-light-9: #f0fdf4;
+  --el-color-primary-dark-2: #16a34a;
+  --el-border-radius-base: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: #bbf7d0;
+  color: #14532d;
+}
+
+/* ---------- shared surfaces ---------- */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.card__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.card__head h2 {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.icon-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.icon-badge--green {
+  color: var(--green-dark);
+  background: var(--green-soft);
+}
+
+/* ---------- element plus tuning ---------- */
+.el-button {
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.el-button--primary {
+  --el-button-bg-color: var(--green);
+  --el-button-border-color: var(--green);
+  --el-button-hover-bg-color: var(--green-dark);
+  --el-button-hover-border-color: var(--green-dark);
+  --el-button-active-bg-color: #15803d;
+  --el-button-active-border-color: #15803d;
+}
+
+.el-dialog {
+  border-radius: 22px;
+  padding: 8px;
+}
+
+.el-dialog__title {
+  font-weight: 700;
+}
+
+.el-overlay {
+  backdrop-filter: blur(2px);
+}
+
+.el-dropdown-menu__item {
+  gap: 8px;
+}
+
+.el-input__wrapper,
+.el-input-number .el-input__wrapper {
+  border-radius: 12px;
+}
+
+.el-progress-bar__outer {
+  background: #eef1f6;
+}
+
+/* date popover */
+.date-popover {
+  padding: 4px;
+  border-radius: 18px;
+  box-shadow: 0 24px 48px -24px rgba(15, 23, 42, 0.35);
+}
+
+.date-popover .el-calendar {
+  --el-calendar-cell-width: 38px;
+}
+
+.date-popover .el-calendar__header {
+  padding: 6px 8px 2px;
+  border-bottom: 0;
+}
+
+.date-popover .el-calendar__body {
+  padding: 4px 8px 8px;
+}
+
+.date-popover .el-calendar-table .el-calendar-day {
+  height: 38px;
+  padding: 0;
+  border-radius: 10px;
+}
+
+.date-popover .el-calendar-table td {
+  border: 0 !important;
+}
+
+.date-popover .el-calendar-table.is-range .el-calendar-day:hover {
+  background: var(--green-soft);
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .el-dialog {
+    width: calc(100% - 28px) !important;
+    margin: 16px auto;
+  }
+}
